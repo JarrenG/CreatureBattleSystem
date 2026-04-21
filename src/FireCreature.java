@@ -12,7 +12,7 @@ public class FireCreature extends Creature{
 
         // 10% chance of getting high damage attack
         else if (Rand.randomInt(0, 10) == 9) {
-            float power = Rand.randomFloat(20, 50);
+            float power = Rand.randomFloat(25, 40);
             action = name + " attacked with their fire rain power " + power + "!";
             return power;
         }
@@ -24,10 +24,10 @@ public class FireCreature extends Creature{
     @Override
     public void defend(float incomingPower) {
 
-        // 10 % chance of reducing damage taken
-        if (Rand.randomInt(0, 10) < 1) {
-            incomingPower = incomingPower * 0.8f;
-            action = name + " defended and reduced damage taken to " + incomingPower;
+        // 40 % chance of reducing damage taken
+        if (Rand.randomInt(0, 10) < 4) {
+            incomingPower = incomingPower * 0.75f;
+            action = name + " defended with a firewall and reduced damage taken to " + incomingPower;
         }
         else
         {

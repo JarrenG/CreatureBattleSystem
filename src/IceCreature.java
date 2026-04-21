@@ -11,8 +11,8 @@ public class IceCreature extends Creature{
         }
 
         // 10% chance of high Damage Attack
-        else if (Rand.randomInt(0,10) = 5) {
-            float power = Rand.randomFloat(10, 20);
+        else if (Rand.randomInt(0, 10) == 5) {
+            float power = Rand.randomFloat(20, 50);
             action = name + " attacked with their high damage flying icicles power " + power + "!";
             return power;
         }
@@ -25,10 +25,10 @@ public class IceCreature extends Creature{
     @Override
     public void defend(float incomingPower) {
 
-        // 10 % chance of reducing damage taken
-        if (Rand.randomInt(0, 10) < 1) {
-            incomingPower = incomingPower * 0.8f;
-            action = name + " defended and reduced damage taken to " + incomingPower;
+        // 20 % chance of reducing damage taken to half
+        if (Rand.randomInt(0, 10) < 2) {
+            incomingPower = incomingPower * 0.5f;
+            action = name + " defended with a ice wall and reduced damage taken to " + incomingPower;
         }
         else
         {
