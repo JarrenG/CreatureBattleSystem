@@ -1,7 +1,29 @@
 public class Creature {
-    public float health;
-    public String name;
-    public String action;
+    private float health;
+    private String name;
+    private String action;
+
+    public Creature(String name, float health) {
+        this.name = name;
+        this.health = health;
+    }
+
+    public void updatedAction(String newAction) {
+        this.action = newAction;
+    }
+
+    public void takeDamage(float damage) {
+        this.health -= damage;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public float getHealth() {
+        return health;
+    }
+
 
 
     // Returns the damage done by the Creature
